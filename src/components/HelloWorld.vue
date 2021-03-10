@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>这是chuhx添加的代码</h2>
+    <h2>这是cwx添加的代码</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
