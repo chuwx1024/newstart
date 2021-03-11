@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "20161931",
+      "name": "包心菜",
+      "font_class": "baoxincai",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "20161933",
+      "name": "冬瓜",
+      "font_class": "donggua",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "20161934",
+      "name": "大头菜",
+      "font_class": "datoucai",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "20161937",
+      "name": "绿豆芽",
+      "font_class": "lvdouya",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    }
+  ]
+}
