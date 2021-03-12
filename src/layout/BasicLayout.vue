@@ -19,13 +19,13 @@
             <el-submenu index="/echarts">
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>导航一</span>
+                <span>图表</span>
               </template>
                 <el-menu-item index="/echarts/line">
-                  选项1
+                  折线图
                 </el-menu-item>
                 <el-menu-item index="/echarts/pie">
-                  选项2
+                  饼图
                 </el-menu-item>
             </el-submenu>
           </el-menu>
