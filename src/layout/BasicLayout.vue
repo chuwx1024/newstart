@@ -1,0 +1,52 @@
+<template>
+  <div class="basicLayout-container">
+    <el-container>
+      <el-aside width="200px">
+        <h5>导航菜单</h5>
+          <el-menu router>
+            <el-menu-item index="/home">
+              <i class="el-icon-menu"></i>
+              <span slot="title">首页</span>
+            </el-menu-item>
+            <el-menu-item index="/icon">
+                <i class="el-icon-document"></i>
+                <span slot="title">图标页面</span>
+            </el-menu-item>
+            <el-menu-item index="/about">
+                <i class="el-icon-document"></i>
+                <span slot="title">关于页面</span>
+            </el-menu-item>
+            <el-submenu index="/echarts">
+              <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>导航一</span>
+              </template>
+                <el-menu-item index="/echarts/line">
+                  选项1
+                </el-menu-item>
+                <el-menu-item index="/echarts/pie">
+                  选项2
+                </el-menu-item>
+            </el-submenu>
+          </el-menu>
+      </el-aside>
+      <el-main>
+          <router-view />
+      </el-main>
+    </el-container>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'basicLayout'
+
+}
+</script>
+
+<style lang='less' scoped>
+   .basicLayout-container {
+
+   }
+
+</style>
