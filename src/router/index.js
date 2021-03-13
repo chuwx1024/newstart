@@ -57,6 +57,34 @@ const routes = [
         component: () => import('@/views/echarts/PieDemo')
       }
     ]
+  },
+  {
+    path: '/find',
+    name: 'Find',
+    component: BasicLayout,
+    redirect: '/find',
+    children: [
+      {
+        path: '/find/one',
+        name: 'One',
+        component: () => import('@/views/find/one')
+      },
+      {
+        path: '/find/two',
+        name: 'Two',
+        component: () => import('@/views/find/two')
+      },
+      {
+        path: '/find/there',
+        name: 'There',
+        component: () => import('@/views/find/there')
+      },
+      {
+        path: '/find/four',
+        name: 'Four',
+        component: () => import('@/views/find/four')
+      }
+    ]
   }
 ]
 
