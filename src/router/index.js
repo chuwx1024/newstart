@@ -70,6 +70,11 @@ const routes = [
         component: () => import('@/views/find/one')
       },
       {
+        path: '/find/oneDetail',
+        name: 'OneDetail',
+        component: () => import('@/views/find/oneDetail')
+      },
+      {
         path: '/find/two',
         name: 'Two',
         component: () => import('@/views/find/two')

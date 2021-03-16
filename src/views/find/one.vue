@@ -66,8 +66,10 @@
         <el-table-column
           prop="state"
           label="操作">
-           <router-link to="/find/four">详情</router-link>
-           <router-link to='/find/four'>发布</router-link>
+          <template slot-scope="scope">
+            <el-button type="text" @click="goToDetail(scope.row)">详情</el-button>
+            <router-link to='/find/four'>发布</router-link>
+           </template>
         </el-table-column>
       </el-table>
     </el-card>
@@ -83,21 +85,47 @@ export default {
         user: '',
         regin: ''
       },
-      tableData: [{
-        ID: 'JH202012011202',
-        dataname: '信用卡信息',
-        date: '2016-05-02',
-        state: '未发布',
-        request: 3,
-        beused: 2,
-        critic: 0
-      }
+      tableData: [
+        {
+          ID: 'JH202012011202',
+          dataname: '信用卡信息',
+          date: '2016-05-02',
+          state: '未发布',
+          request: 3,
+          beused: 2,
+          critic: 6
+        }, {
+          ID: 'JH202012011203',
+          dataname: '银行卡信息',
+          date: '2016-05-03',
+          state: '已发布',
+          request: 3,
+          beused: 7,
+          critic: 0
+        }, {
+          ID: 'JH202012011204',
+          dataname: '医保卡卡信息',
+          date: '2016-05-04',
+          state: '待审核',
+          request: 6,
+          beused: 2,
+          critic: 0
+        }
       ]
     }
   },
   methods: {
     onSubmit () {
       this.$router.push({ name: 'Four' })
+    },
+    goToDetail (row) {
+      this.$router.push({
+        name: 'OneDetail',
+        params: {
+          rowData: row
+        }
+      })
+      console.log(row, 123)
     }
   }
 }
