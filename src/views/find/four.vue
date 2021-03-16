@@ -24,7 +24,7 @@
           <el-radio :label="9">对部分用户不可见</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item>
+      <el-form-item label="企业名称 :">
         <el-input
           placeholder="输入企业名称"
           v-model="input"
@@ -32,7 +32,7 @@
         </el-input>
       </el-form-item>
       <el-form-item>
-        <el-button size="small"  @click="onSubmit">取消</el-button>
+        <el-button size="small"  @click="cancel">取消</el-button>
         <el-button size="small" type="primary" @click="onSubmit">保存</el-button>
         <el-button size="small" type="primary" @click="onSubmit">保存并发布</el-button>
       </el-form-item>
@@ -49,11 +49,6 @@ export default {
         desc: '',
         region: '',
         featureType: '',
-        date1: '',
-        date2: '',
-        delivery: false,
-        type: [],
-        resource: '',
         radio: 6
       },
       rules: {
@@ -73,6 +68,20 @@ export default {
         if (valid) {
           alert('submit!')
         }
+      })
+    },
+    cancel () {
+      this.$confirm('要返回详情页吗?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$router.push({ name: 'One' })
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消跳转'
+        })
       })
     }
   }
