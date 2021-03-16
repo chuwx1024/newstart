@@ -1,11 +1,10 @@
 <template>
   <el-card class="box-card">
-    <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="数据名称 :">
+    <el-form ref="formID" :model="form" label-width="120px" :rules="rules">
+      <el-form-item label="数据名称 :" prop="dataname">
         <el-input placeholder="请输入" v-model="form.dataname"></el-input>
-        <span>回电话呵呵呵</span>
       </el-form-item>
-      <el-form-item label="数据描述 :">
+      <el-form-item label="数据描述 :" prop="desc">
         <el-input placeholder="请输入" type="textarea" v-model="form.desc"></el-input>
       </el-form-item>
       <el-form-item label="数据标签 :">
@@ -16,7 +15,7 @@
         <span>标签最多设置30个</span>
       </el-form-item>
       <el-form-item label="特征分类 :">
-        <el-input placeholder="性别，年龄..." type="textarea" v-model="form.desc"></el-input>
+        <el-input placeholder="性别，年龄..." type="textarea" v-model="form.featureType"></el-input>
       </el-form-item>
       <el-form-item label="开放范围 :">
         <el-radio-group v-model="form.radio">
@@ -47,20 +46,34 @@ export default {
     return {
       form: {
         dataname: '',
+        desc: '',
         region: '',
+        featureType: '',
         date1: '',
         date2: '',
         delivery: false,
         type: [],
         resource: '',
-        desc: '',
         radio: 6
+      },
+      rules: {
+        dataname: [
+          { required: true, message: '请输入数据名称', trigger: 'blur' },
+          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+        ],
+        desc: [
+          { required: true, message: '请输入数据描述', trigger: 'blur' }
+        ]
       }
     }
   },
   methods: {
     onSubmit () {
-      console.log('submit!')
+      this.$refs.formID.validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        }
+      })
     }
   }
 }
